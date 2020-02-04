@@ -23,20 +23,20 @@ public class DeathListener implements Listener
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onEvent(final PlayerDeathEvent event)
     {
-        if (event.getEntity().getLastDamageCause().getCause() == EntityDamageEvent.DamageCause.VOID || event.getEntity().getLastDamageCause().getCause() == EntityDamageEvent.DamageCause.SUFFOCATION)
+        boolean restoreAllItems = event.getEntity().getLastDamageCause().getCause() == EntityDamageEvent.DamageCause.VOID
+                               || event.getEntity().getLastDamageCause().getCause() == EntityDamageEvent.DamageCause.SUFFOCATION;
+
+        final ItemEntry entry = new ItemEntry();
+        for (int i = 0; i < event.getEntity().getInventory().getSize(); ++i)
         {
-            final ItemEntry entry = new ItemEntry();
-            for (int i = 0; i < event.getEntity().getInventory().getSize(); ++i)
+            final ItemStack stack = event.getEntity().getInventory().getItem(i);
+            if (stack != null && !stack.getType().equals(Material.AIR) && (stack.getType().equals(Material.PLAYER_HEAD) || restoreAllItems))
             {
-                final ItemStack stack = event.getEntity().getInventory().getItem(i);
-                if (stack != null && !stack.getType().equals(Material.AIR))
-                {
-                    entry.getItems().put(i, stack);
-                }
+                entry.getItems().put(i, stack);
             }
-            event.getDrops().clear();
-            NoVoidLoss.items.put(event.getEntity().getUniqueId().toString(), entry);
         }
+        event.getDrops().clear();
+        NoVoidLoss.items.put(event.getEntity().getUniqueId().toString(), entry);
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
