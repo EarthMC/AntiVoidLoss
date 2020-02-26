@@ -1,5 +1,6 @@
 name: NoVoidLoss
 version: 1.0.1
+api-version: 1.15
 author: Karl Essinger (KarlofDuty)
 website: http://karlofduty.com
 main: com.karlofduty.NoVoidLoss.NoVoidLoss
