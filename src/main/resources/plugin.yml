@@ -1,7 +1,7 @@
 name: NoVoidLoss
 version: ${project.version}
 description: ${project.description}
-api-version: '1.15'
-author: Karl Essinger (KarlofDuty)
+api-version: '1.16'
+authors: [ "KarlofDuty", "creatorfromhell" ]
 website: http://karlofduty.com
 main: com.karlofduty.NoVoidLoss.NoVoidLoss
