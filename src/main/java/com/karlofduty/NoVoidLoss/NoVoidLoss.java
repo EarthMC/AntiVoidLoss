@@ -1,14 +1,12 @@
 package com.karlofduty.NoVoidLoss;
 
-import org.bukkit.plugin.java.*;
-import org.bukkit.*;
-import java.util.*;
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.java.JavaPlugin;
 
 public class NoVoidLoss extends JavaPlugin
 {
-    public static Map<String, ItemEntry> items = new HashMap<>();
     public void onEnable()
     {
-        Bukkit.getPluginManager().registerEvents(new DeathListener(this), this);
+        Bukkit.getPluginManager().registerEvents(new DeathListener(), this);
     }
 }
