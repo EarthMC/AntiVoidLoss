@@ -23,7 +23,7 @@ public class DeathListener implements Listener
             event.setKeepInventory(true);
             event.setKeepLevel(true);
         }
-        else if (event.getEntity().getInventory().contains(Material.PLAYER_HEAD) || event.getEntity().getInventory().getHelmet().getType().equals(Material.PLAYER_HEAD))
+        else if ((event.getEntity().getInventory().contains(Material.PLAYER_HEAD) || event.getEntity().getInventory().getHelmet().getType().equals(Material.PLAYER_HEAD)) && !event.getKeepInventory())
         {
             ItemEntry entry = new ItemEntry();
             for (int i = 0; i < event.getEntity().getInventory().getSize(); i++)
