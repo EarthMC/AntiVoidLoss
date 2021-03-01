@@ -16,7 +16,7 @@ public class DeathListener implements Listener
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerDeath(final PlayerDeathEvent event)
     {
-        if (event.getEntity().getLocation().getY() < 50 || event.getEntity().getLastDamageCause().getCause() == DamageCause.SUFFOCATION)
+        if (event.getEntity().getLocation().getY() < 100 || event.getEntity().getLastDamageCause().getCause() == DamageCause.SUFFOCATION)
         {
             event.getDrops().clear();
             event.setDroppedExp(0);
