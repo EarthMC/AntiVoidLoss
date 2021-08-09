@@ -9,7 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class NoVoidLoss extends JavaPlugin
 {
-    public static Map<UUID, ItemEntry> playerSkulls = new HashMap<>();
+    @Override
     public void onEnable()
     {
         Bukkit.getPluginManager().registerEvents(new DeathListener(), this);
