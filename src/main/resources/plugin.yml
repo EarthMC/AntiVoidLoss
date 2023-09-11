@@ -3,5 +3,6 @@ version: ${project.version}
 description: ${project.description}
 api-version: '1.16'
 authors: [ "KarlofDuty", "creatorfromhell" ]
-website: http://karlofduty.com
+website: https://karlofduty.com
 main: com.karlofduty.NoVoidLoss.NoVoidLoss
+folia-supported: true
