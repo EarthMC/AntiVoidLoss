@@ -26,7 +26,7 @@ public class DeathListener implements Listener
         {
             for (ItemStack item : player.getInventory())
             {
-                if (item != null && item.getType().equals(Material.PLAYER_HEAD))
+                if (item != null && (item.getType().equals(Material.PLAYER_HEAD) || item.getType().equals(Material.DRAGON_HEAD)))
                 {
                     event.getDrops().remove(item);
                     event.getItemsToKeep().add(item);
